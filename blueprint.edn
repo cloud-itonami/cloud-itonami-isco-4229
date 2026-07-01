@@ -1,0 +1,10 @@
+{:itonami.blueprint/id "cloud-itonami-isco-4229"
+ :itonami.blueprint/name "Independent Client Information Services Practice"
+ :itonami.blueprint/isco-08 "4229"
+ :itonami.blueprint/domain :services/client-information
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:local-jobs :customer-access :small-business-support]
+ :itonami.blueprint/governor :client-information-governor
+ :itonami.blueprint/robotics true
+ :itonami.blueprint/required-technologies [:robotics :forms :identity :audit-ledger :bpmn]
+ :itonami.blueprint/status :public-oss}
