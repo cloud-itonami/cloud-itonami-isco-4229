@@ -62,17 +62,17 @@ human-in-the-loop interrupt/resume via checkpointing.
                                            +-> :hold               (:hard? true)
 ```
 
-- `src/client_information/store.cljc` — `Store` protocol +
+- `src/client_information/store.cljk` — `Store` protocol +
   `MemStore`: registered clients, committed records, an append-only
   audit ledger.
-- `src/client_information/advisor.cljc` — `Advisor` protocol;
+- `src/client_information/advisor.cljk` — `Advisor` protocol;
   `mock-advisor` (deterministic, default) proposes an information
   operation from a request; `llm-advisor` wraps a
   `langchain.model/ChatModel` — either way the advisor only ever
   produces a `:propose`-effect proposal, never a committed record, and
   LLM parse failures always yield `confidence 0.0` (forces escalation,
   never fabricated confidence).
-- `src/client_information/governor.cljc` —
+- `src/client_information/governor.cljk` —
   `ClientInformationGovernor/check`: a pure function, wired as its own
   `:govern` node. Hard invariants (unregistered client, a proposal
   whose `:effect` isn't `:propose`) always route to `:hold`. Escalation
@@ -83,7 +83,7 @@ human-in-the-loop interrupt/resume via checkpointing.
   (`actor/approve!`), matching the README's robotics-premise statement
   that disclosing sensitive client information and emergency-request
   routing always require human sign-off.
-- `src/client_information/actor.cljc` — `build-graph`, `run-request!`,
+- `src/client_information/actor.cljk` — `build-graph`, `run-request!`,
   `approve!`: the `langgraph.graph/state-graph` wiring itself.
 
 ```bash
