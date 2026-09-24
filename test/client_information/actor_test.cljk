@@ -1,5 +1,5 @@
 (ns client-information.actor-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [client-information.actor :as actor]
             [client-information.store :as store]))
 
